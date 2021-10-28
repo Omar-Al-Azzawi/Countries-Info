@@ -3,6 +3,8 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 
+import {  useTheme } from "../../context/context" 
+
 import { removFromCart } from "../../features/CartSlice";
 
 import "./Cart.scss"
@@ -10,6 +12,7 @@ import "./Cart.scss"
 function cart() {
     const cart = useSelector!((state: any) => state.cart)
     const dispatch = useDispatch!()
+    const { theme, setTheme } = useTheme!()
 
     const handleRemoveFromCart = (cartItem: any) => {
         dispatch(removFromCart(cartItem))
@@ -34,7 +37,7 @@ function cart() {
                                         <h3>{cartItem.name}</h3>
                                     </div>
                                     <div className='btn__container'>
-                                         <button onClick={() => handleRemoveFromCart(cartItem)}>Remove</button>
+                                         <button style={{backgroundColor: theme}}  onClick={() => handleRemoveFromCart(cartItem)}>Remove</button>
                                     </div>
                                 </div>
                             </div>

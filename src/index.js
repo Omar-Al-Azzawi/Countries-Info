@@ -7,11 +7,13 @@ import { Provider } from "react-redux";
 
 import countryReducer from "./features/CountrySlice";
 import CartReducer from "./features/CartSlice";
+import ThemeReducer from "./features/themeSlice";
 
 const store = configureStore({
   reducer: {
     country: countryReducer,
     cart: CartReducer,
+    theme: ThemeReducer,
   },
 });
 
