@@ -1,8 +1,8 @@
 .header {
-  /* background-color: blueviolet; */
   box-shadow: 0 5px 5px #999;
   display: flex;
   justify-content: space-between;
+  transition: all 600ms ease-in-out;
 }
 .serach_container {
   display: flex;
@@ -109,4 +109,11 @@
   &:hover {
     color: #999;
   }
+}
+.cart_total {
+  color: #e74c3c;
+  background-color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50%;
+  opacity: 0.8;
 }

@@ -38,7 +38,7 @@ function CountryTable() {
     return (
         <>
         <NavBar
-         placeholder="Search country by the name..."
+         placeholder='Search country by the name...'
          handleChange={handleChange}
          />
         <table>
@@ -58,9 +58,9 @@ function CountryTable() {
                 } else if (val.name.toLowerCase().includes(search.toLowerCase())){
                     return val
                 }
-            }).map((n, index) => (
+            }).map((n, idx) => (
                 <tbody>
-                    <tr key={index}>
+                    <tr key={idx}>
                         <td>
                             <img width={'150px'} src={n.flag} alt={n.name} />
                         </td>
@@ -76,9 +76,9 @@ function CountryTable() {
                     </tr>
                 </tbody>
             )).slice(0, 10)}
-              <Stack spacing={2}>
-      <Pagination count={10} color="secondary"/>
-    </Stack>
+              <Stack className="pagination" spacing={2}>
+                 <Pagination count={10} color="secondary"/>
+              </Stack>
         </table>
         </>
     )

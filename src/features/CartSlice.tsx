@@ -17,6 +17,9 @@ const cartSlice = createSlice({
          const nextCartItem =  state.cartItems.filter((cartItem: any) => cartItem.name !== action.payload.name);
          state.cartItems = nextCartItem
          localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+        },
+        cartTotal(state, action: any){
+            state.cartTotal = state.cartItems.legth
         }
     }
 })

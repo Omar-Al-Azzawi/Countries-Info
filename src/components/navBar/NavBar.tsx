@@ -5,9 +5,9 @@ import { FaBars } from "react-icons/fa"
 import { IoIosArrowBack } from "react-icons/io"
 
 import { Theme, useTheme } from "../../context/context"
+import { useSelector } from "react-redux"
 
 import "./NavBar.scss"
-import CartItem from '../cart/CartItem'
 
 export interface Props{
     placeholder: string
@@ -17,6 +17,7 @@ export interface Props{
 function NavBar(props: Props) {
     const [sideBar, setSideBar] = useState(false)
     const { theme, setTheme } = useTheme()
+    const cart = useSelector!((state: any) => state.cart)
 
     const showSideBar = () => {
         setSideBar(!sideBar)
@@ -54,7 +55,7 @@ function NavBar(props: Props) {
                 <Link to="/cart">
                   <RiSuitcaseLine />
                 </Link>
-                <span>{CartItem.length}</span>
+                <span className='cart_total'>{cart.cartItems.length}</span>
             </div>
        </header>
     )
