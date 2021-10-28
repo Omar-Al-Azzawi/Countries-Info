@@ -45,7 +45,7 @@ function NavBar(props: Props) {
                         <span></span>
                     </ul>
                 </nav>
-                <h1>Countries information 🌍</h1>
+                <h1>Hello World 🌍</h1>
                 <input
                 placeholder={props.placeholder}
                 onChange={props.handleChange}
