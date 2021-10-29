@@ -14,6 +14,6 @@ export type ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType>({
     theme: Theme.Purple,
-    setTheme: (theme) => console.log('no theme'),
+    setTheme: (theme) => console.log('theme'),
   })
   export const useTheme = () => useContext(ThemeContext)
