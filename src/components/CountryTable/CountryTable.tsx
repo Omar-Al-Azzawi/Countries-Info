@@ -58,6 +58,7 @@ function CountryTable() {
                 } else if (val.name.toLowerCase().includes(search.toLowerCase())){
                     return val
                 }
+                    return null
             }).map((n, idx) => (
                 <tbody>
                     <tr key={idx}>

@@ -12,7 +12,7 @@ import "./Cart.scss"
 function cart() {
     const cart = useSelector!((state: any) => state.cart)
     const dispatch = useDispatch!()
-    const { theme, setTheme } = useTheme!()
+    const { theme } = useTheme!()
 
     const handleRemoveFromCart = (cartItem: any) => {
         dispatch(removFromCart(cartItem))
