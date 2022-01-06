@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
-import { addToCart, removFromCart } from "../../features/CartSlice"
+import { addToCart } from "../../features/CartSlice"
 
 import { useTheme } from "../../context/context"
 
