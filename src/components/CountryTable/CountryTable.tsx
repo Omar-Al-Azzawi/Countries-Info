@@ -1,8 +1,5 @@
 import React, { useState, useCallback } from "react"
 
-/* import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack'; */
-
 import { useDispatch } from "react-redux"
 import { addToCart } from "../../features/CartSlice"
 
@@ -77,9 +74,6 @@ function CountryTable() {
                     </tr>
                 </tbody>
             )).slice(0, 10)}
-             {/*  <Stack className="pagination" spacing={2}>
-                 <Pagination count={10} color="secondary"/>
-              </Stack> */}
         </table>
         </>
     )
