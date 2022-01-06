@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react"
 
-import { useDispatch } from "react-redux"
-import { addToCart } from "../../features/CartSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { addToCart, removFromCart } from "../../features/CartSlice"
 
 import { useTheme } from "../../context/context"
 
@@ -13,6 +13,7 @@ import "./CountryTable.scss"
 
 function CountryTable() {
     const[search, setSearch] = useState('')
+    const cart = useSelector!((state: any) => state.cart)
     const dispatch = useDispatch()
     const { theme } = useTheme()
 
@@ -69,7 +70,13 @@ function CountryTable() {
                         ))}</td>
                         <td>{n.region}</td>
                         <td>
-                            <button style={{backgroundColor: theme}} onClick={() => handleAddToCart(n)}>ADD</button>
+                            {cart.cartItems.find((val: any) => val.name === n.name) ? (
+                                <button style={{backgroundColor: theme}} disabled>
+                                    Added
+                                </button>
+                            ) : (
+                                <button style={{backgroundColor: theme}} onClick={() => handleAddToCart(n)}>ADD</button>    
+                            )}
                         </td>
                     </tr>
                 </tbody>
