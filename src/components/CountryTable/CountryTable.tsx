@@ -71,7 +71,7 @@ function CountryTable() {
                         <td>{n.region}</td>
                         <td>
                             {cart.cartItems.find((val: any) => val.name === n.name) ? (
-                                <button style={{backgroundColor: theme}} disabled>
+                                <button style={{backgroundColor: '#999'}} disabled>
                                     Added
                                 </button>
                             ) : (
